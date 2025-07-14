@@ -1,134 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AsylumTools</title>
   <style>
-    /* Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #121212;
+      --text: #E5E5EA;
+      --card-bg: #1E1E1E;
+      --card-border: #2C2C2E;
+      --accent-sij: #34D399;
+      --accent-rates: #60A5FA;
+      --radius: 12px;
+      --shadow: rgba(0, 0, 0, 0.5);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
-      background: #1c1c1e;
-      color: #e5e5ea;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
                    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.6;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      padding: 2rem;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 960px;
+      width: 100%;
+      padding: 0 1rem;
+      text-align: center;
     }
     h1 {
-      text-align: center;
-      margin-bottom: 2rem;
       font-size: 2.5rem;
-      color: #f2f2f7;
+      margin-bottom: 2rem;
+      color: var(--text);
     }
-
-    /* Grid layout */
     .grid {
       display: grid;
-      gap: 2rem;
+      gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      width: 100%;
-      max-width: 900px;
     }
-
-    /* Glassy cards */
     .card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px var(--shadow);
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px var(--shadow);
     }
-
-    .card-header {
-      padding: 1rem;
+    .card-title {
       font-size: 1.25rem;
       font-weight: 600;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 0.75rem;
     }
-
-    .card-body {
-      padding: 1rem;
-      flex: 1;
-      line-height: 1.5;
-      font-size: 1rem;
+    .card-text {
+      flex-grow: 1;
+      margin-bottom: 1.25rem;
+      color: var(--text);
     }
-
-    .card-footer {
-      padding: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      text-align: center;
-    }
-
-    /* Buttons */
     .btn {
       text-decoration: none;
-      display: inline-block;
       padding: 0.6rem 1.2rem;
-      border-radius: 12px;
+      border-radius: var(--radius);
       font-weight: 600;
       transition: background 0.2s ease;
     }
     .btn-sij {
-      background: rgba(255, 255, 255, 0.2);
-      color: #f2f2f7;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: var(--accent-sij);
+      color: #fff;
     }
     .btn-sij:hover {
-      background: rgba(255, 255, 255, 0.3);
+      background: #2fa67d;
     }
     .btn-rates {
-      background: rgba(255, 255, 255, 0.05);
-      color: #f2f2f7;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: var(--accent-rates);
+      color: #fff;
     }
     .btn-rates:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: #4f97e6;
     }
-
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="container">
     <h1>AsylumTools</h1>
     <div class="grid">
       <div class="card">
-        <div class="card-header">SIJ Forms Automator</div>
-        <div class="card-body">
-          Automate filling out Special Immigrant Juvenile (SIJ) forms quickly using exported Excel data from LawLogix.
+        <div class="card-title">SIJ Forms Automator</div>
+        <div class="card-text">
+          Automate filling Special Immigrant Juvenile (SIJ) forms quickly using exported Excel data from LawLogix.
         </div>
-        <div class="card-footer">
-          <a href="https://sij.asylumtools.com" class="btn btn-sij">
-            Go to SIJ Automator →
-          </a>
-        </div>
+        <a href="https://sij.asylumtools.com" class="btn btn-sij">
+          Go to SIJ Automator →
+        </a>
       </div>
-
       <div class="card">
-        <div class="card-header">Judge Grants Rates</div>
-        <div class="card-body">
+        <div class="card-title">Judge Grants Rates</div>
+        <div class="card-text">
           View asylum case grant rates by judge and city—designed for immigrants to research grant likelihood.
         </div>
-        <div class="card-footer">
-          <a href="https://rates.asylumtools.com" class="btn btn-rates">
-            View Rates Tool →
-          </a>
-        </div>
+        <a href="https://rates.asylumtools.com" class="btn btn-rates">
+          View Rates Tool →
+        </a>
       </div>
     </div>
   </div>
