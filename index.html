@@ -5,120 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AsylumTools</title>
   <style>
-    /* Reset & basic typography */
+    /* Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
-                   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      background: #1c1c1e;
+      color: #e5e5ea;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      padding: 1rem;
+      padding: 2rem;
     }
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
       text-align: center;
-      color: #222;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #f2f2f7;
     }
+
+    /* Grid layout */
     .grid {
       display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       width: 100%;
-      max-width: 800px;
+      max-width: 900px;
     }
+
+    /* Glassy cards */
     .card {
-      background: #fff;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
     }
+
     .card-header {
-      background: linear-gradient(135deg, #4f46e5, #3b82f6);
       padding: 1rem;
-      color: #fff;
-      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .card-header.small {
-      background: linear-gradient(135deg, #10b981, #14b8a6);
-    }
+
     .card-body {
-      padding: 1.25rem;
-      flex-grow: 1;
-    }
-    .card-body p {
-      margin-bottom: 1rem;
+      padding: 1rem;
+      flex: 1;
       line-height: 1.5;
+      font-size: 1rem;
     }
+
     .card-footer {
       padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       text-align: center;
-      background: #f9fafb;
     }
+
+    /* Buttons */
     .btn {
+      text-decoration: none;
       display: inline-block;
       padding: 0.6rem 1.2rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
+      border-radius: 12px;
       font-weight: 600;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: background 0.2s ease;
     }
-    .btn-primary {
-      background: #4f46e5;
-      color: #fff;
+    .btn-sij {
+      background: rgba(255, 255, 255, 0.2);
+      color: #f2f2f7;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
-    .btn-primary:hover {
-      background: #4338ca;
+    .btn-sij:hover {
+      background: rgba(255, 255, 255, 0.3);
     }
-    .btn-secondary {
-      background: #10b981;
-      color: #fff;
+    .btn-rates {
+      background: rgba(255, 255, 255, 0.05);
+      color: #f2f2f7;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .btn-secondary:hover {
-      background: #0f766e;
+    .btn-rates:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
+
     @media (max-width: 480px) {
-      h1 { font-size: 1.5rem; }
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
   <div>
-    <h1>Welcome to AsylumTools</h1>
+    <h1>AsylumTools</h1>
     <div class="grid">
       <div class="card">
-        <div class="card-header small">
-          SIJ Forms Automator
-        </div>
+        <div class="card-header">SIJ Forms Automator</div>
         <div class="card-body">
-          <p>Automate filling out Special Immigrant Juvenile (SIJ) forms quickly using exported Excel data from LawLogix.</p>
+          Automate filling out Special Immigrant Juvenile (SIJ) forms quickly using exported Excel data from LawLogix.
         </div>
         <div class="card-footer">
-          <a class="btn btn-secondary" href="https://sij.asylumtools.com">
+          <a href="https://sij.asylumtools.com" class="btn btn-sij">
             Go to SIJ Automator →
           </a>
         </div>
       </div>
+
       <div class="card">
-        <div class="card-header">
-          Judge Grants Rates
-        </div>
+        <div class="card-header">Judge Grants Rates</div>
         <div class="card-body">
-          <p>View asylum case grant rates by judge and city—designed for immigrants to research grant likelihood.</p>
+          View asylum case grant rates by judge and city—designed for immigrants to research grant likelihood.
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary" href="https://rates.asylumtools.com">
+          <a href="https://rates.asylumtools.com" class="btn btn-rates">
             View Rates Tool →
           </a>
         </div>
