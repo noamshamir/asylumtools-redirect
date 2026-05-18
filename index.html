@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AsylumTools</title>
   <script>
     if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -10,119 +10,55 @@
     }
   </script>
   <style>
-    :root {
-      --bg: #121212;
-      --text: #E5E5EA;
-      --card-bg: #1E1E1E;
-      --card-border: #2C2C2E;
-      --accent-sij: #34D399;
-      --accent-rates: #60A5FA;
-      --radius: 12px;
-      --shadow: rgba(0, 0, 0, 0.5);
-    }
-    *, *::before, *::after { box-sizing: border-box; }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      line-height: 1.6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 1rem;
-    }
-    .container {
-      max-width: 960px;
-      width: 100%;
-      padding: 0 1rem;
-      text-align: center;
+      max-width: 640px;
+      margin: 6rem auto;
+      padding: 0 1.5rem;
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #222;
+      background: #fff;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 2.5rem;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 .25rem;
+    }
+    section {
       margin-bottom: 2rem;
-      color: var(--text);
     }
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    p {
+      margin: 0 0 .5rem;
+      color: #444;
     }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      box-shadow: 0 4px 12px var(--shadow);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    a {
+      color: #0645ad;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px var(--shadow);
-    }
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-    .card-text {
-      flex-grow: 1;
-      margin-bottom: 1.25rem;
-      color: var(--text);
-    }
-    .btn {
+    a:hover {
       text-decoration: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      transition: background 0.2s ease;
-    }
-    .btn-sij {
-      background: var(--accent-sij);
-      color: #fff;
-    }
-    .btn-sij:hover {
-      background: #2fa67d;
-    }
-    .btn-rates {
-      background: var(--accent-rates);
-      color: #fff;
-    }
-    .btn-rates:hover {
-      background: #4f97e6;
     }
     @media (max-width: 480px) {
-      h1 { font-size: 1.8rem; }
+      body { margin: 3rem auto; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>AsylumTools</h1>
-    <div class="grid">
-      <div class="card">
-        <div class="card-title">SIJ Forms Automator</div>
-        <div class="card-text">
-          Automate filling Special Immigrant Juvenile (SIJ) forms quickly using exported Excel data from LawLogix.
-        </div>
-        <a href="https://sij.asylumtools.com" class="btn btn-sij">
-          Go to SIJ Automator →
-        </a>
-      </div>
-      <div class="card">
-        <div class="card-title">Judge Grants Rates</div>
-        <div class="card-text">
-          View asylum case grant rates by judge and city—designed for immigrants to research grant likelihood.
-        </div>
-        <a href="https://rates.asylumtools.com" class="btn btn-rates">
-          View Rates Tool →
-        </a>
-      </div>
-    </div>
-  </div>
+  <h1>AsylumTools</h1>
+
+  <section>
+    <h2>SIJ Forms Automator</h2>
+    <p>Fills Special Immigrant Juvenile forms from LawLogix Excel exports.</p>
+    <a href="https://sij.asylumtools.com">sij.asylumtools.com</a>
+  </section>
+
+  <section>
+    <h2>Judge Grants Rates</h2>
+    <p>Asylum case grant rates by judge and city.</p>
+    <a href="https://rates.asylumtools.com">rates.asylumtools.com</a>
+  </section>
 </body>
 </html>
